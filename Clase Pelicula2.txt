@@ -1,0 +1,80 @@
+package com.conversor;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.Flow;
+
+public class Principal2 {
+    public static void main(String[] args) throws IOException {
+        Map<Integer, String> hmListaConvertir = new HashMap<>();
+        hmListaConvertir.put(1, "Dolar           =>> Peso Argentino");
+        hmListaConvertir.put(2, "Peso Argentino  =>> Dolar");
+        hmListaConvertir.put(3, "Dolar           =>> Real Brasileño");
+        hmListaConvertir.put(4, "Rela Brasileño  =>> Dolar");
+        hmListaConvertir.put(5, "Dolar           =>> Peso Colombiano.");
+        hmListaConvertir.put(6, "Peso Colombiano =>> Dolar");
+        hmListaConvertir.put(7, "*** Para =>> Salir ***");
+//        System.out.println(hmListaConvertir);
+//        System.out.println(hmListaConvertir.entrySet());
+//        System.out.println(hmListaConvertir.values());
+//        System.out.println(hmListaConvertir.keySet());
+
+        // Setting URL
+        String url_str = "https://v6.exchangerate-api.com/v6/807d2718da24424737a4e2ef/pair/USD/COP";
+
+//// Making Request
+//        URL url = new URL(url_str);
+//        HttpURLConnection request = (HttpURLConnection) url.openConnection();
+//        request.connect();
+//
+//// Convert to JSON
+//        JsonParser jp = new JsonParser();
+//        JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+//        JsonObject jsonobj = root.getAsJsonObject();
+//
+//// Accessing object
+//        String req_result = jsonobj.get("result").getAsString();
+//        String req_result2 = jsonobj.get("conversion_rate").getAsString();
+//        System.out.println("este es el archivo " + req_result2 + " " + req_result);
+
+
+
+//        URL url2 = new URL(url_str);
+//        HttpURLConnection request2 = (HttpURLConnection) url2.openConnection();
+//        request2.connect();
+//        //Probando otos metodos
+//        JsonParser jp2 = new JsonParser();
+//        JsonElement root2 = jp2.parse(new InputStreamReader((InputStream) request2.getContent()));
+//        JsonObject jsonobj2 = root2.getAsJsonObject();
+//        String resultado = jsonobj2.get("result").getAsString();
+//        System.out.println(resultado);
+//        Object Class;
+//        Class uno = jsonobj2.entrySet();
+
+
+
+
+
+//        Flow.Publisher tPublisher = (ratex) -> jsonobjX.asMap();
+//        System.out.println("tPublisher =" + tPublisher.getClass());
+
+//        System.out.println(jsonobjX.asMap());
+//        Map<String, JsonElement> mo = jsonobj.asMap();
+//
+//        ApiMonedas apm = new ApiMonedas("","","","");
+//
+//        System.out.println(mo);
+//        System.out.println(jsonobjX.getAsJsonArray());
+    }
+}
