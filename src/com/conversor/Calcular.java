@@ -4,7 +4,7 @@ public class Calcular implements ProcesarConversion {
     public HistorialConversion convertirMetodoMap(double cantidaAConvertir, int opcionElegida, String monedaAConvertir )
             throws NoSuchFieldException, IllegalAccessException {
         HistorialConversion hc = new HistorialConversion();
-        hc = ConexionAPIs.apiMap(monedaAConvertir);
+        hc = ConexionAPIs.apiClase(monedaAConvertir);
         Double valor = hc.getConversion_rate();
         //
         Double conversion = 0.0;

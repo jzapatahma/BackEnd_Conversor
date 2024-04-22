@@ -5,18 +5,19 @@ import com.google.gson.*;
 import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class HistorialConversion {
     public LocalDate fecha;
-    public LocalDateTime hora;
+    public LocalTime hora;
     private String  base_code;
     private String target_code;
     private Double conversion_rate;
     private Double conversion_total;
     //
-    public HistorialConversion(LocalDate fecha, LocalDateTime hora, String base_code, String target_code, Double conversion_rate, Double conversion_total) {
+    public HistorialConversion(LocalDate fecha, LocalTime hora, String base_code, String target_code, Double conversion_rate, Double conversion_total) {
         this.fecha = fecha;
         this.hora = hora;
         this.base_code = base_code;
@@ -35,10 +36,10 @@ public class HistorialConversion {
         this.fecha = fecha;
     }
 
-    public LocalDateTime getHora() {
+    public LocalTime getHora() {
         return hora;
     }
-    public void setHora(LocalDateTime hora) {
+    public void setHora(LocalTime hora) {
         this.hora = hora;
     }
 
@@ -114,6 +115,22 @@ class LocalDateTimeDeserializer implements JsonDeserializer<LocalDateTime> {
     public LocalDateTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
             throws JsonParseException {
         return LocalDateTime.parse(json.getAsString(),
+                DateTimeFormatter.ofPattern("HH::mm::ss").withLocale(Locale.ENGLISH));
+    }
+}
+
+class LocalTimeSerializer implements JsonSerializer<LocalTime> {
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH::mm::ss");
+    @Override
+    public JsonElement serialize(LocalTime localTime, Type srcType, JsonSerializationContext context) {
+        return new JsonPrimitive(formatter.format(localTime));
+    }
+}
+class LocalTimeDeserializer implements JsonDeserializer<LocalTime> {
+    @Override
+    public LocalTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+            throws JsonParseException {
+        return LocalTime.parse(json.getAsString(),
                 DateTimeFormatter.ofPattern("HH::mm::ss").withLocale(Locale.ENGLISH));
     }
 }

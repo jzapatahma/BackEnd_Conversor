@@ -1,0 +1,4 @@
+HistorialConversion{fecha=2024-04-21, hora=21:23:45.779779100, base_code='USD', target_code='ARS', conversion_rate=864.75, conversion_total=8647.5}
+HistorialConversion{fecha=2024-04-21, hora=21:23:57.366119200, base_code='USD', target_code='COP', conversion_rate=3913.8964, conversion_total=39138.964}
+HistorialConversion{fecha=2024-04-21, hora=21:24:06.315381400, base_code='ARS', target_code='USD', conversion_rate=0.001156, conversion_total=173.39999999999998}
+HistorialConversion{fecha=2024-04-21, hora=21:24:17.733402900, base_code='BRL', target_code='USD', conversion_rate=0.1904, conversion_total=2856.0}
